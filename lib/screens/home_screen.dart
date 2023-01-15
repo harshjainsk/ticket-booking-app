@@ -6,6 +6,7 @@ import 'package:ticket_booking_app/screens/hotelScreen.dart';
 import 'package:ticket_booking_app/screens/ticket_view.dart';
 import 'package:ticket_booking_app/utils/hotel_info_list.dart';
 import 'package:ticket_booking_app/utils/app_styles.dart';
+import 'package:ticket_booking_app/utils/ticket_info_list.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -83,10 +84,7 @@ class HomeScreen extends StatelessWidget {
             padding: const EdgeInsets.only(left: 16),
             scrollDirection: Axis.horizontal,
             child: Row(
-              children: [
-                TicketView(),
-                TicketView(),
-              ],
+              children: ticketList.map((singleTicket) => TicketView(ticket: singleTicket)).toList()
             ),
           ),
           Container(

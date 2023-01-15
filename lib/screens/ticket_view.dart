@@ -31,16 +31,29 @@ class TicketView extends StatelessWidget {
                       Text('NYC', style: Styles.headLineStyle3.copyWith(color: Colors.white),),
                       Expanded(child: Container()),
                       ThickCircularContainer(),
-                      Expanded(child: SizedBox(
-                          height: 24,
-                          child: Flex(
-                            direction: Axis.horizontal,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: List.generate(5, (index) => Text('-', style: Styles.headLineStyle2,))
-                            ,
+                      Expanded(
+                        child: Stack(
+                          children: [
+                            SizedBox(
+                            height: 24,
+                            child: Flex(
+                              direction: Axis.horizontal,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: List.generate(5, (index) => Text('-', style: Styles.headLineStyle2.copyWith(color: Colors.white),))
+                              ,
+                            ),
                           ),
+                            Center(
+                              child: Transform.rotate(angle:1.5,
+                                  child:Icon(Icons.local_airport_rounded,
+                                    color: Colors.white,)
+                              ),
+                            ),
+
+                          ],
                         ),
                       ),
+
                       ThickCircularContainer(),
                       Expanded(child: Container()),
                       Text('London', style: Styles.headLineStyle3.copyWith(color: Colors.white),),

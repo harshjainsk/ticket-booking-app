@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:gap/gap.dart';
 import 'package:ticket_booking_app/utils/app_layout.dart';
 import 'package:ticket_booking_app/utils/app_styles.dart';
@@ -79,7 +80,78 @@ class TicketView extends StatelessWidget {
                   )
                 ],
               ),
-            )
+            ),
+
+            //Showing the orange part of ticket
+            Container(
+              color: Color(0xFFF37B67),
+              child: Row(
+                children: [
+                  SizedBox(
+                    height: 20,
+                    width: 10,
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(10),
+                          bottomRight: Radius.circular(10)
+                        )
+                      ),
+
+                    )
+                  ),
+                  Expanded(child: Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: LayoutBuilder(
+                      builder: (BuildContext context, BoxConstraints constraints) {
+                        return Flex(
+                          direction: Axis.horizontal,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisSize: MainAxisSize.max,
+                          children: List.generate((constraints.constrainWidth()/15).floor(), (index) => const SizedBox(
+                            width: 5, height: 1,
+                            child: DecoratedBox(
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                              ),
+                            ),
+                          )
+                          ),
+                        );
+                      },
+
+                      ),
+                  ),
+                  ),
+                  SizedBox(
+                    width: 10,
+                    height: 20,
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                            bottomLeft: Radius.circular(10)
+                        ),
+
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              decoration: const BoxDecoration(
+                color: Color(0xFFF37B67),
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(21),
+                  bottomRight: Radius.circular(21)
+                )
+              ),
+              padding: const EdgeInsets.all(16),
+
+            ),
           ],
         ),
       ),

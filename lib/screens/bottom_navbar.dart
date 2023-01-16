@@ -2,6 +2,7 @@ import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ticket_booking_app/screens/home_screen.dart';
+import 'package:ticket_booking_app/screens/search_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({Key? key}) : super(key: key);
@@ -14,7 +15,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   int selectedIndex = 0;
   static final List<Widget>_widgetOptions = <Widget>[
   HomeScreen(),
-  const Text("search"),
+  SearchScreen(),
   const Text("Tickets"),
   const Text("Profile"),
   ];

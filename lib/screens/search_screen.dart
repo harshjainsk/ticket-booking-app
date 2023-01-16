@@ -5,6 +5,7 @@ import 'package:ticket_booking_app/utils/app_layout.dart';
 import 'package:ticket_booking_app/widgets/icon_text_widget.dart';
 
 import '../utils/app_styles.dart';
+import '../widgets/text_viewAll_widget.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({Key? key}) : super(key: key);
@@ -54,19 +55,22 @@ class SearchScreen extends StatelessWidget {
           Gap(AppLayout.getHeight(25)),
           const IconTextWidget(icon: Icons.flight_takeoff_rounded, text: 'Departure'),
           Gap(AppLayout.getHeight(25)),
-          const IconTextWidget(icon: Icons.flight_land_rounded, text: 'Departure'),
-          Gap(AppLayout.getHeight(25)),
-          const IconTextWidget(icon: Icons.flight_takeoff_rounded, text: 'Departure'),
+          const IconTextWidget(icon: Icons.flight_land_rounded, text: 'Arrival'),
           Gap(AppLayout.getHeight(25)),
           Container(
-            padding: EdgeInsets.all(AppLayout.getHeight(10)),
+            padding: EdgeInsets.all(AppLayout.getHeight(18)),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(AppLayout.getWidth(10)),
               color: Color(0xD91130CE),
             ),
 
             child: Text('Find Tickets', style: Styles.textStyle.copyWith(color: Colors.white),textAlign: TextAlign.center,),
-          )
+          ),
+          Gap(AppLayout.getHeight(40)),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 16),
+            child: TextViewAll(bigText: 'Upcoming Flights', smallText: 'View All'),
+          ),
 
         ],
       ),

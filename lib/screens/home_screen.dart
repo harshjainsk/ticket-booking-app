@@ -7,6 +7,7 @@ import 'package:ticket_booking_app/screens/ticket_view.dart';
 import 'package:ticket_booking_app/utils/hotel_info_list.dart';
 import 'package:ticket_booking_app/utils/app_styles.dart';
 import 'package:ticket_booking_app/utils/ticket_info_list.dart';
+import 'package:ticket_booking_app/widgets/text_viewAll_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -63,17 +64,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 const Gap(25),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text('Upcoming Flights', style: Styles.headLineStyle2,),
-                    InkWell(
-                        onTap: (){
-                          print('tapped');
-                        },
-                        child: Text('View All', style: Styles.textStyle.copyWith(color: Styles.primaryColor),))
-                  ],
-                )
+                TextViewAll(bigText: 'Upcoming Flights', smallText: 'View All'),
 
 
               ],
@@ -89,18 +80,7 @@ class HomeScreen extends StatelessWidget {
           ),
           Container(
             padding: EdgeInsets.symmetric(horizontal: 16),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text("Hotels", style: Styles.headLineStyle2,),
-                InkWell(
-                  onTap: (){
-                    print("tapped");
-                  },
-                  child: Text('View All', style: Styles.textStyle.copyWith(color: Styles.primaryColor),)
-                )
-              ],
-            ),
+            child: TextViewAll(bigText: 'Hotels', smallText: 'View All'),
           ),
           const Gap(15),
           SingleChildScrollView(

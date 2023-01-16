@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 import 'package:ticket_booking_app/utils/app_layout.dart';
 import 'package:ticket_booking_app/utils/app_styles.dart';
 import 'package:ticket_booking_app/widgets/thick_circular_container_for_ticket_view.dart';
@@ -16,8 +17,8 @@ class TicketView extends StatelessWidget {
 
     final size = AppLayout.getSize(context);
     return SizedBox(
-      width: size.width*0.90,
-      height: AppLayout.getHeight(200),
+      width: size.width*0.85,
+      height: AppLayout.getHeight(GetPlatform.isAndroid==true?167:169),
       child: Container(
         margin: EdgeInsets.only(right: AppLayout.getHeight(16)),
         child: Column(
@@ -74,7 +75,7 @@ class TicketView extends StatelessWidget {
                         width: AppLayout.getWidth(100),
                         child: Text('${ticket['from']['name']}', style: isColor==null?Styles.headLineStyle4.copyWith(color: Colors.white):Styles.headLineStyle4),
                       ),
-                      Text('${ticket['flying_time']}', style: isColor==null?Styles.headLineStyle4.copyWith(color: Colors.white):Styles.headLineStyle4,),
+                      Text('${ticket['flying_time']}', style: isColor==null?Styles.headLineStyle4.copyWith(color: Colors.white):Styles.headLineStyle4.copyWith(color: Colors.black),),
                       SizedBox(
                         width: AppLayout.getWidth(100),
                         child: Text('${ticket['to']['name']}', textAlign: TextAlign.end,style: isColor==null?Styles.headLineStyle4.copyWith(color: Colors.white):Styles.headLineStyle4,),
@@ -148,8 +149,8 @@ class TicketView extends StatelessWidget {
               decoration: BoxDecoration(
                 color: isColor==null?Color(0xFFF37B67):Colors.white,
                 borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(AppLayout.getHeight(21)),
-                  bottomRight: Radius.circular(AppLayout.getHeight(21))
+                  bottomLeft: Radius.circular(isColor==null?AppLayout.getHeight(21):0),
+                  bottomRight: Radius.circular(isColor==null?AppLayout.getHeight(21):0)
                 )
               ),
               padding: EdgeInsets.only(left: AppLayout.getHeight(16),top: AppLayout.getHeight(10),right: AppLayout.getHeight(16),bottom: AppLayout.getHeight(16)),

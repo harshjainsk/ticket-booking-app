@@ -1,3 +1,4 @@
+import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -116,6 +117,38 @@ class TicketScreen extends StatelessWidget {
 
                   ],
                 ),
+              ),
+              SizedBox(height: 1,),
+              Container(
+
+                padding: EdgeInsets.only(top: 20,bottom: 20),
+                margin: EdgeInsets.symmetric(horizontal: AppLayout.getHeight(15)),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(AppLayout.getHeight(21)),
+                    bottomRight: Radius.circular(AppLayout.getHeight(21)),
+                  ),
+                ),
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: AppLayout.getHeight(15)),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(AppLayout.getHeight(15)),
+                    child: BarcodeWidget(
+                      data: 'https://github.com/harshjainsk',
+                      barcode: Barcode.code128(),
+                      drawText: false,
+                      color: Styles.textColor,
+                      width: double.infinity,
+                      height: 70,
+                    ),
+                  ),
+                ),
+              ),
+              Gap(AppLayout.getHeight(20)),
+              Container(
+                padding: EdgeInsets.only(left: AppLayout.getHeight(15)),
+                child: TicketView(ticket: ticketList[0]),
               ),
 
             ],

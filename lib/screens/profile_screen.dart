@@ -143,7 +143,20 @@ class ProfileScreen extends StatelessWidget {
           ),
           Gap(AppLayout.getHeight(25)),
           Text('Accumulated miles', style: Styles.headLineStyle2,),
+          Gap(AppLayout.getHeight(20)),
           Container(
+            padding: EdgeInsets.symmetric(horizontal: AppLayout.getHeight(15)),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(AppLayout.getHeight(18)),
+              color: Styles.bgColor,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.shade200,
+                  blurRadius: 1,
+                  spreadRadius: 1,
+                ),
+              ],
+            ),
             child: Column(
               children: [
                 Gap(AppLayout.getHeight(15)),
@@ -204,7 +217,25 @@ class ProfileScreen extends StatelessWidget {
 
               ],
             ),
-          )
+          ),
+          Gap(AppLayout.getHeight(20)),
+          Container(
+            padding: EdgeInsets.symmetric(vertical: AppLayout.getHeight(13)),
+            child: Center(
+              child: InkWell(
+                onTap: (){
+                  print('Tapped');
+                },
+                child: Text('How to get more miles',
+                    style: Styles.textStyle.copyWith(
+                      color: Styles.primaryColor,
+                      fontWeight: FontWeight.w500
+                    ),
+                  ),
+              ),
+              ),
+
+          ),
         ],
       ),
     );

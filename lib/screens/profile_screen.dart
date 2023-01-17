@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:ticket_booking_app/utils/app_layout.dart';
 import 'package:ticket_booking_app/utils/app_styles.dart';
+import 'package:ticket_booking_app/widgets/column_layout.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -140,6 +141,70 @@ class ProfileScreen extends StatelessWidget {
               ),
             ],
           ),
+          Gap(AppLayout.getHeight(25)),
+          Text('Accumulated miles', style: Styles.headLineStyle2,),
+          Container(
+            child: Column(
+              children: [
+                Gap(AppLayout.getHeight(15)),
+                Text('192802',
+                  style: TextStyle(
+                    fontSize: 45,
+                    color: Styles.textColor,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                Gap(AppLayout.getHeight(20)),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text('Miles accrued',
+                      style: Styles.headLineStyle4.copyWith(
+                        fontSize: 16
+                      ),
+                    ),
+                    Text('11 June 2022',
+                      style: Styles.headLineStyle4.copyWith(
+                          fontSize: 16
+                      ),
+                    ),
+                  ],
+                ),
+                Gap(AppLayout.getHeight(12)),
+                Divider(color: Colors.grey.shade300,),
+                Gap(AppLayout.getHeight(12)),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    ColumnLayout(firstText: '23 042', secondText: 'Miles', alignment: CrossAxisAlignment.start),
+                    ColumnLayout(firstText: 'Airline CO', secondText: 'Recieved from', alignment: CrossAxisAlignment.end),
+                  ],
+                ),
+                Gap(AppLayout.getHeight(12)),
+                Divider(color: Colors.grey.shade300,),
+                Gap(AppLayout.getHeight(12)),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    ColumnLayout(firstText: '24', secondText: 'Miles', alignment: CrossAxisAlignment.start),
+                    ColumnLayout(firstText: 'McDonal\'s', secondText: 'Recieved from', alignment: CrossAxisAlignment.end),
+                  ],
+                ),
+                Gap(AppLayout.getHeight(12)),
+                Divider(color: Colors.grey.shade300,),
+                Gap(AppLayout.getHeight(12)),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    ColumnLayout(firstText: '52 340', secondText: 'Miles', alignment: CrossAxisAlignment.start),
+                    ColumnLayout(firstText: 'Exuma', secondText: 'Recieved from', alignment: CrossAxisAlignment.end),
+                  ],
+                ),
+
+
+              ],
+            ),
+          )
         ],
       ),
     );

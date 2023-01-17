@@ -82,6 +82,7 @@ class ProfileScreen extends StatelessWidget {
           ),
           Gap(AppLayout.getHeight(8)),
           Divider(color: Colors.grey.shade300,),
+          Gap(AppLayout.getHeight(8)),
           Stack(
             children: [
               Container(
@@ -90,7 +91,53 @@ class ProfileScreen extends StatelessWidget {
                   color: Styles.primaryColor,
                   borderRadius: BorderRadius.circular(AppLayout.getHeight(18))
                 ),
-              )
+              ),
+              Positioned(
+                right: -45,
+                top: -40,
+                child: Container(
+                padding: EdgeInsets.all(AppLayout.getHeight(30)),
+                decoration: BoxDecoration(
+                  color: Colors.transparent,
+                  shape: BoxShape.circle,
+                  border: Border.all(width: 18, color: Color(0xFF264CD2)),
+                ),
+              ),
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: AppLayout.getWidth(15), vertical: AppLayout.getHeight(20)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    CircleAvatar(
+                      maxRadius: 25,
+                      backgroundColor: Colors.white,
+                      child: Icon(FluentSystemIcons.ic_fluent_lightbulb_filament_filled, color: Styles.primaryColor,size: 27,),
+                    ),
+                    Gap(AppLayout.getHeight(12)),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('You have got a new reward',
+                          style: Styles.headLineStyle2.copyWith(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white
+                          ),
+                        ),
+                        Text('You have 95 flights this year',
+                          style: Styles.headLineStyle2.copyWith(
+                              fontWeight: FontWeight.w500,
+                              color: Colors.white.withOpacity(0.9),
+                            fontSize: 16
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ],
